@@ -3,7 +3,7 @@ import json
 
 ip_addr = input("Enter IP : ")
 api_url = 'https://api.api-ninjas.com/v1/iplookup?address={}'.format(ip_addr)
-response = requests.get(api_url, headers = {'X-Api-Key': 'Yhl7iIvZsSp+Z1wgz7IClw==elM4rnguiSPIrIRI'})
+response = requests.get(api_url, headers = {'X-Api-Key': os.environ['NINJA']})
 
 if response.status_code == requests.codes.ok:
     data = json.loads(response.text)
